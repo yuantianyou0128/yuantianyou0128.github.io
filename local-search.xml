@@ -8,12 +8,14 @@
     <link href="/2025/10/25/P9749-CSP-J-2023-%E5%85%AC%E8%B7%AF-%E9%A2%98%E8%A7%A3/"/>
     <url>/2025/10/25/P9749-CSP-J-2023-%E5%85%AC%E8%B7%AF-%E9%A2%98%E8%A7%A3/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="P9749-CSP-J-2023-公路-题解"><a href="#P9749-CSP-J-2023-公路-题解" class="headerlink" title="P9749 [CSP-J 2023] 公路_题解"></a>P9749 [CSP-J 2023] 公路_题解</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>公路上一共有 $n$ 个站点，编号为从 $1$ 到 $n$。其中站点 $i$ 与站点 $i + 1$ 的距离为 $v_i$ 公里。</p><p>公路上每个站点都可以加油，编号为 $i$ 的站点一升油的价格为 $a_i$ 元，且每个站点只出售整数升的油。</p><p>小苞想从站点 $1$ 开车到站点 $n$，一开始小苞在站点 $1$ 且车的油箱是空的。已知车的油箱足够大，可以装下任意多的油，且每升油可以让车前进 $d$ 公里。问小苞从站点 $1$ 开到站点 $n$，至少要花多少钱加油？</p><h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入的第一行包含两个正整数 $n$ 和 $d$，分别表示公路上站点的数量和车每升油可以前进的距离。</p><p>输入的第二行包含 $n - 1$ 个正整数 $v_1, v_2\dots v_{n-1}$，分别表示站点间的距离。</p><p>输入的第三行包含 $n$ 个正整数 $a_1, a_2 \dots a_n$，分别表示在不同站点加油的价格。</p><h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出一行，仅包含一个正整数，表示从站点 $1$ 开到站点 $n$，小苞至少要花多少钱加油。</p><h2 id="输入输出样例-1"><a href="#输入输出样例-1" class="headerlink" title="输入输出样例 #1"></a>输入输出样例 #1</h2><h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入 #1"></a>输入 #1</h3><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">5 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">10 </span><span class="hljs-number">10</span> <span class="hljs-number">10</span> <span class="hljs-number">10</span><br><span class="hljs-symbol">9 </span><span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">6</span> <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure><h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出 #1"></a>输出 #1</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">79<br></code></pre></td></tr></table></figure><p><strong>【数据范围】</strong></p><p>对于所有测试数据保证：$1 \leq n \leq 10^5$，$1 \leq d \leq 10^5$，$1 \leq v_i \leq 10^5$，$1 \leq a_i \leq 10^5$。</p><h2 id="Code："><a href="#Code：" class="headerlink" title="$Code：$"></a>$Code：$</h2><p>核心思想:贪心</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> n, d;<br><span class="hljs-type">int</span> v[<span class="hljs-number">100005</span>];<br><span class="hljs-type">long</span> <span class="hljs-type">long</span> a[<span class="hljs-number">100005</span>];<br><span class="hljs-type">long</span> <span class="hljs-type">long</span> ans, now, mi = <span class="hljs-number">1e9</span>;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>);<br>    cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);<br>    cin &gt;&gt; n &gt;&gt; d;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++)<br>        cin &gt;&gt; v[i];<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)<br>        cin &gt;&gt; a[i];<br>    ans += (v[<span class="hljs-number">1</span>] + d - <span class="hljs-number">1</span>) / d * a[<span class="hljs-number">1</span>];<br>    now += (v[<span class="hljs-number">1</span>] + d - <span class="hljs-number">1</span>) / d * d - v[<span class="hljs-number">1</span>];<br>    mi = <span class="hljs-built_in">min</span>(mi, a[<span class="hljs-number">1</span>]);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt; n; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (now &gt;= v[i])<br>        &#123;<br>            now -= v[i];<br>            <span class="hljs-keyword">continue</span>;<br>        &#125;<br>        mi = <span class="hljs-built_in">min</span>(mi, a[i]);<br>        <span class="hljs-type">int</span> cha = v[i] - now;<br>        ans += (cha + d - <span class="hljs-number">1</span>) / d * mi;<br>        now = now - v[i] + (cha + d - <span class="hljs-number">1</span>) / d * d;<br>    &#125;<br>    cout &lt;&lt; ans;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
       
       <category>题解</category>
+      
+      <category>洛谷</category>
       
       <category>普及-</category>
       
@@ -21,6 +23,8 @@
     
     
     <tags>
+      
+      <tag>洛谷</tag>
       
       <tag>普及-</tag>
       
@@ -42,12 +46,16 @@
       
       <category>题解</category>
       
+      <category>洛谷</category>
+      
       <category>普及-</category>
       
     </categories>
     
     
     <tags>
+      
+      <tag>洛谷</tag>
       
       <tag>普及-</tag>
       
@@ -75,6 +83,8 @@
     
     
     <tags>
+      
+      <tag>洛谷</tag>
       
       <tag>入门</tag>
       
@@ -121,7 +131,7 @@
     
     <categories>
       
-      <category>题解</category>
+      <category>简介/介绍</category>
       
       <category>入门</category>
       
@@ -130,7 +140,7 @@
     
     <tags>
       
-      <tag>入门</tag>
+      <tag>网站介绍</tag>
       
     </tags>
     
