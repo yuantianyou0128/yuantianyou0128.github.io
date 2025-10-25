@@ -4,6 +4,87 @@
   
   
   <entry>
+    <title>P9749 [CSP-J 2023] 公路_题解</title>
+    <link href="/2025/10/25/P9749-CSP-J-2023-%E5%85%AC%E8%B7%AF-%E9%A2%98%E8%A7%A3/"/>
+    <url>/2025/10/25/P9749-CSP-J-2023-%E5%85%AC%E8%B7%AF-%E9%A2%98%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>题解</category>
+      
+      <category>普及-</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>普及-</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>P2802 回家题解</title>
+    <link href="/2025/10/25/P2802-%E5%9B%9E%E5%AE%B6%E9%A2%98%E8%A7%A3/"/>
+    <url>/2025/10/25/P2802-%E5%9B%9E%E5%AE%B6%E9%A2%98%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<h1 id="P2802-回家"><a href="#P2802-回家" class="headerlink" title="P2802 回家"></a>P2802 回家</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><a href="https://paste.ubuntu.com/p/DSg5bzrrjs/"></a></p><p>小 H 在一个划分成了 $n \times m$ 个方格的长方形封锁线上。 每次他能向上下左右四个方向移动一格（当然小 H 不可以静止不动）， 但不能离开封锁线，否则就被打死了。 刚开始时他有满血 $6$ 点，每移动一格他要消耗 $1$ 点血量。一旦小 H 的血量降到 $0$， 他将死去。 他可以沿路通过拾取鼠标（什么鬼。。。）来补满血量。只要他走到有鼠标的格子，他不需要任何时间即可拾取。格子上的鼠标可以瞬间补满，所以每次经过这个格子都有鼠标。就算到了某个有鼠标的格子才死去， 他也不能通过拾取鼠标补满 HP。 即使在家门口死去， 他也不能算完成任务回到家中。</p><p>地图上有五种格子：</p><p><code>0</code>：障碍物。</p><p><code>1</code>：空地， 小 H 可以自由行走。</p><p><code>2</code>：小 H 出发点， 也是一片空地。</p><p><code>3</code>：小 H 的家。</p><p><code>4</code>：有鼠标在上面的空地。</p><h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行两个整数 $n,m$， 表示地图的大小为 $n \times m$。</p><h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一行， 若小 H 不能回家， 输出 <code>-1</code>，否则输出他回家所需最短时间。</p><h2 id="输入输出样例-1"><a href="#输入输出样例-1" class="headerlink" title="输入输出样例 #1"></a>输入输出样例 #1</h2><h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入 #1"></a>输入 #1</h3><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">3 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">1</span> <span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span> <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure><h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出 #1"></a>输出 #1</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">4<br></code></pre></td></tr></table></figure><h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明&#x2F;提示"></a>说明&#x2F;提示</h2><p>对于所有数据，$1 \le n,m \le 9$。</p><h2 id="Code"><a href="#Code" class="headerlink" title="$Code:$"></a>$Code:$</h2><h3 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h3><p>注意到$n$和$m$都只有$9$,所以完全可以用<strong>暴搜BFS</strong></p><p>需要注意的是,vis标记数组要开三维,第一位记录行,第二维记录列,<strong>第三维记录经过这个点时的HP(不加第三维会有两个点WA)</strong></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;queue&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> n, m;<br><span class="hljs-type">int</span> dx[] = &#123;<span class="hljs-number">0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>&#125;;<br><span class="hljs-type">int</span> dy[] = &#123;<span class="hljs-number">-1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>&#125;;<br><span class="hljs-type">int</span> a[<span class="hljs-number">20</span>][<span class="hljs-number">20</span>];<br><span class="hljs-type">bool</span> vis[<span class="hljs-number">20</span>][<span class="hljs-number">20</span>][<span class="hljs-number">10</span>];<br><span class="hljs-type">int</span> bx, by, ex, ey;<br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">node</span><br>&#123;<br>    <span class="hljs-type">int</span> x, y, hp, t;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">bfs</span><span class="hljs-params">(<span class="hljs-type">int</span> sx, <span class="hljs-type">int</span> sy)</span></span><br><span class="hljs-function"></span>&#123;<br>    queue&lt;node&gt; q;<br>    q.<span class="hljs-built_in">push</span>(&#123;sx, sy, <span class="hljs-number">6</span>, <span class="hljs-number">0</span>&#125;);<br>    <span class="hljs-keyword">while</span> (!q.<span class="hljs-built_in">empty</span>())<br>    &#123;<br>        node u = q.<span class="hljs-built_in">front</span>();<br>        q.<span class="hljs-built_in">pop</span>();<br>        <span class="hljs-keyword">if</span> (u.x == ex &amp;&amp; u.y == ey)<br>        &#123;<br>            <span class="hljs-keyword">return</span> u.t;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt;= <span class="hljs-number">3</span>; i++)<br>        &#123;<br>            node v;<br>            v.x = u.x + dx[i];<br>            v.y = u.y + dy[i];<br>            v.hp = u.hp - <span class="hljs-number">1</span>, v.t = u.t + <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">if</span> (v.hp &lt;= <span class="hljs-number">0</span>)<br>                <span class="hljs-keyword">continue</span>;<br>            <span class="hljs-keyword">if</span> (a[v.x][v.y] == <span class="hljs-number">4</span>)<br>                v.hp = <span class="hljs-number">6</span>;<br>            <span class="hljs-keyword">if</span> (v.x &lt; <span class="hljs-number">1</span> || v.y &lt; <span class="hljs-number">1</span> || v.x &gt; n || v.y &gt; m || a[v.x][v.y] == <span class="hljs-number">0</span> || vis[v.x][v.y][v.hp])<br>                <span class="hljs-keyword">continue</span>;<br>            vis[v.x][v.y][v.hp] = <span class="hljs-number">1</span>;<br>            q.<span class="hljs-built_in">push</span>(v);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    cin &gt;&gt; n &gt;&gt; m;<br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt;= m; j++)<br>        &#123;<br>            cin &gt;&gt; a[i][j];<br>            <span class="hljs-keyword">if</span> (a[i][j] == <span class="hljs-number">2</span>)<br>                bx = i, by = j;<br>            <span class="hljs-keyword">if</span> (a[i][j] == <span class="hljs-number">3</span>)<br>                ex = i, ey = j;<br>        &#125;<br>    &#125;<br>    cout &lt;&lt; <span class="hljs-built_in">bfs</span>(bx, by);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p><a href="https://www.luogu.com.cn/record/240557235">不加第三维的结果_QwQ_</a></p><p><a href="https://www.luogu.com.cn/record/240561083">AC记录</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>题解</category>
+      
+      <category>普及-</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>普及-</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>B4294 [蓝桥杯青少年组国赛 2022] 电线上的小鸟 题解</title>
+    <link href="/2025/10/25/B4294-%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%9D%92%E5%B0%91%E5%B9%B4%E7%BB%84%E5%9B%BD%E8%B5%9B-2022-%E7%94%B5%E7%BA%BF%E4%B8%8A%E7%9A%84%E5%B0%8F%E9%B8%9F-%E9%A2%98%E8%A7%A3/"/>
+    <url>/2025/10/25/B4294-%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%9D%92%E5%B0%91%E5%B9%B4%E7%BB%84%E5%9B%BD%E8%B5%9B-2022-%E7%94%B5%E7%BA%BF%E4%B8%8A%E7%9A%84%E5%B0%8F%E9%B8%9F-%E9%A2%98%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<h1 id="B4294-蓝桥杯青少年组国赛-2022-电线上的小鸟-题解"><a href="#B4294-蓝桥杯青少年组国赛-2022-电线上的小鸟-题解" class="headerlink" title="B4294 [蓝桥杯青少年组国赛 2022] 电线上的小鸟 题解"></a>B4294 [蓝桥杯青少年组国赛 2022] 电线上的小鸟 题解</h1><h3 id="作者只是个刚入坑的蒟蒻，dalao勿喷"><a href="#作者只是个刚入坑的蒟蒻，dalao勿喷" class="headerlink" title="&#x2F;&#x2F;作者只是个刚入坑的蒟蒻，dalao勿喷"></a>&#x2F;&#x2F;作者只是个刚入坑的蒟蒻，dalao勿喷</h3><p><strong>回归正题</strong><br>这道题我们只需要让每只鸟看向的那只鸟的记录数组++，然后统计亿下就可以了~~  </p><h3 id="大佬勿喷！"><a href="#大佬勿喷！" class="headerlink" title="大佬勿喷！"></a>大佬勿喷！</h3><p><strong>最后为各位客官奉上代码！</strong></p><h2 id="Code"><a href="#Code" class="headerlink" title="$Code$:"></a>$Code$:</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span>  n;<br><span class="hljs-type">int</span> cnt[<span class="hljs-number">1005</span>];<br><span class="hljs-type">int</span> ling,yi,er;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>cin &gt;&gt; n;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++)&#123;<br><span class="hljs-type">char</span> c;<br>cin &gt;&gt; c;<br><span class="hljs-keyword">if</span>(c == <span class="hljs-string">&#x27;p&#x27;</span>) cnt[i + <span class="hljs-number">1</span>]++;<br><span class="hljs-keyword">else</span> cnt[i - <span class="hljs-number">1</span>]++; <br>&#125;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++)&#123;<br><span class="hljs-keyword">if</span>(cnt[i] == <span class="hljs-number">0</span>) ling++;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(cnt[i] == <span class="hljs-number">1</span>) yi++;<br><span class="hljs-keyword">else</span> er++;<br>&#125;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d %d %d&quot;</span>,ling,yi,er);<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p>求过！！！<br><del>点个赞再走吧！求求啦！！</del></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>题解</category>
+      
+      <category>入门</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>入门</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2025/10/25/hello-world/"/>
     <url>/2025/10/25/hello-world/</url>
