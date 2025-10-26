@@ -19,24 +19,23 @@
   <meta name="author" content="yuantianyou0128">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Hexo·Markdown编写测试1.粗体&#x2F;斜体这是我的博客！我会在这里发题解！这句话又粗又斜! 2.图片&#x2F;连接(1)链接1[标题](链接) Go洛谷! (2)图片1![标题](图片链接)  3.代码块AC代码: 1234567891011121314151617181920212223242526272829303132333435363738394041#include&amp;l">
+    <meta name="description" content="P13015 [GESP202506 六级] 学习小组 题解（作为一名刚初一的蒟蒻，也不能忘记水题做题的使命!）我们用dp[i]来表示把前i个人分组能得到的最大积极度 那么，开始解析代码先用一层循环遍历n个人，再在里面套一个循环从1~n，表示把i个人中的j个人分到一组 在第二层循环开始前让dp[i]等于dp[i-1] 如果那i个人能分到一组，转移方程式就是在dp[i]和dp[i-j]+a[j]中取">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown测试">
-<meta property="og:url" content="http://yuantianyou0128.github.io/2025/10/26/markdown%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:title" content="P13015 [GESP202506 六级] 学习小组 题解">
+<meta property="og:url" content="http://yuantianyou0128.github.io/2025/10/26/P13015-GESP202506-%E5%85%AD%E7%BA%A7-%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%84-%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Yuantianyou&#39;Hexo">
-<meta property="og:description" content="Hexo·Markdown编写测试1.粗体&#x2F;斜体这是我的博客！我会在这里发题解！这句话又粗又斜! 2.图片&#x2F;连接(1)链接1[标题](链接) Go洛谷! (2)图片1![标题](图片链接)  3.代码块AC代码: 1234567891011121314151617181920212223242526272829303132333435363738394041#include&amp;l">
+<meta property="og:description" content="P13015 [GESP202506 六级] 学习小组 题解（作为一名刚初一的蒟蒻，也不能忘记水题做题的使命!）我们用dp[i]来表示把前i个人分组能得到的最大积极度 那么，开始解析代码先用一层循环遍历n个人，再在里面套一个循环从1~n，表示把i个人中的j个人分到一组 在第二层循环开始前让dp[i]等于dp[i-1] 如果那i个人能分到一组，转移方程式就是在dp[i]和dp[i-j]+a[j]中取">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/qoshteif.png">
-<meta property="article:published_time" content="2025-10-26T10:31:28.000Z">
-<meta property="article:modified_time" content="2025-10-26T10:49:03.580Z">
+<meta property="article:published_time" content="2025-10-26T11:45:31.000Z">
+<meta property="article:modified_time" content="2025-10-26T11:46:51.885Z">
 <meta property="article:author" content="yuantianyou0128">
-<meta property="article:tag" content="测试">
+<meta property="article:tag" content="普及-">
+<meta property="article:tag" content="洛谷">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/qoshteif.png">
   
   
   
-  <title>Markdown测试 - Yuantianyou&#39;Hexo</title>
+  <title>P13015 [GESP202506 六级] 学习小组 题解 - Yuantianyou&#39;Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Markdown测试"></span>
+            <span id="subtitle" data-typed-text="P13015 [GESP202506 六级] 学习小组 题解"></span>
           
         </div>
 
@@ -213,7 +212,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-10-26 18:31" pubdate>
+        <time datetime="2025-10-26 19:45" pubdate>
           2025年10月26日 晚上
         </time>
       </span>
@@ -225,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          301 字
+          253 字
         
       </span>
     
@@ -273,22 +272,19 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Markdown测试</h1>
+            <h1 id="seo-header">P13015 [GESP202506 六级] 学习小组 题解</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="Hexo·Markdown编写测试"><a href="#Hexo·Markdown编写测试" class="headerlink" title="Hexo·Markdown编写测试"></a>Hexo·Markdown编写测试</h2><h3 id="1-粗体-斜体"><a href="#1-粗体-斜体" class="headerlink" title="1.粗体&#x2F;斜体"></a>1.粗体&#x2F;斜体</h3><p><strong>这是我的博客！</strong><br><em>我会在这里发题解！</em><br><em><strong>这句话又粗又斜!</strong></em></p>
-<h3 id="2-图片-连接"><a href="#2-图片-连接" class="headerlink" title="2.图片&#x2F;连接"></a>2.图片&#x2F;连接</h3><h4 id="1-链接"><a href="#1-链接" class="headerlink" title="(1)链接"></a>(1)链接</h4><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scheme">[<span class="hljs-name">标题</span>](<span class="hljs-name">链接</span>)<br></code></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/">Go洛谷!</a></p>
-<h4 id="2-图片"><a href="#2-图片" class="headerlink" title="(2)图片"></a>(2)图片</h4><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">!<span class="hljs-selector-attr">[标题]</span>(图片链接)<br></code></pre></td></tr></table></figure>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/qoshteif.png" srcset="/img/loading.gif" lazyload alt="威风的龙!"></p>
-<h3 id="3-代码块"><a href="#3-代码块" class="headerlink" title="3.代码块"></a>3.代码块</h3><p>AC代码:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> t;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-built_in">freopen</span>(<span class="hljs-string">&quot;string.in&quot;</span>,<span class="hljs-string">&quot;r&quot;</span>,stdin);<br>	<span class="hljs-built_in">freopen</span>(<span class="hljs-string">&quot;string.out&quot;</span>,<span class="hljs-string">&quot;w&quot;</span>,stdout);<br>	ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>);<br>	cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);<br>	cin &gt;&gt; t;<br>	<span class="hljs-keyword">while</span>(t--)&#123;<br>		<span class="hljs-type">char</span> a[<span class="hljs-number">100005</span>],s[<span class="hljs-number">100005</span>];<br>		<span class="hljs-built_in">memset</span>(s,<span class="hljs-number">0</span>,<span class="hljs-built_in">sizeof</span>(s));<br>		<span class="hljs-built_in">memset</span>(a,<span class="hljs-number">0</span>,<span class="hljs-built_in">sizeof</span>(a));<br>		cin &gt;&gt; (a + <span class="hljs-number">1</span>);<br>		<span class="hljs-type">int</span> len = <span class="hljs-built_in">strlen</span>(a + <span class="hljs-number">1</span>),cnt = <span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= len;i++) <span class="hljs-keyword">if</span>(a[i] != <span class="hljs-string">&#x27;a&#x27;</span>) cnt++;<br>		<span class="hljs-keyword">if</span>(cnt % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>)&#123;<br>			cout &lt;&lt; <span class="hljs-string">&quot;No solution!&quot;</span> &lt;&lt; endl;<br>			<span class="hljs-keyword">continue</span>;<br>		&#125;<br>		<span class="hljs-type">int</span> k = len - cnt / <span class="hljs-number">2</span> + <span class="hljs-number">1</span>,j = <span class="hljs-number">0</span>;<br>		<span class="hljs-type">bool</span> f = <span class="hljs-number">1</span>;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= len - cnt / <span class="hljs-number">2</span>;i++)&#123;<br>			<span class="hljs-keyword">if</span>(a[i] == <span class="hljs-string">&#x27;a&#x27;</span>)&#123;<br>				s[j++] = <span class="hljs-string">&#x27;a&#x27;</span>;<br>				<span class="hljs-keyword">continue</span>;<br>			&#125;<br>			<span class="hljs-keyword">if</span>(a[i] != a[k])&#123;<br>				f = <span class="hljs-number">0</span>;<br>				<span class="hljs-keyword">break</span>;<br>			&#125;<span class="hljs-keyword">else</span>&#123;<br>				s[j++] = a[i];<br>				k++;<br>			&#125;<br>		&#125;<br>		<span class="hljs-keyword">if</span>(f == <span class="hljs-number">0</span>) cout &lt;&lt; <span class="hljs-string">&quot;No solution!&quot;</span> &lt;&lt; endl;<br>		<span class="hljs-keyword">else</span> cout &lt;&lt; s &lt;&lt; endl;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h1 id="P13015-GESP202506-六级-学习小组-题解"><a href="#P13015-GESP202506-六级-学习小组-题解" class="headerlink" title="P13015 [GESP202506 六级] 学习小组 题解"></a>P13015 [GESP202506 六级] 学习小组 题解</h1><h3 id="（作为一名刚初一的蒟蒻，也不能忘记水题做题的使命-）"><a href="#（作为一名刚初一的蒟蒻，也不能忘记水题做题的使命-）" class="headerlink" title="（作为一名刚初一的蒟蒻，也不能忘记水题做题的使命!）"></a>（作为一名刚初一的蒟蒻，也不能忘记<del>水题</del>做题的使命!）</h3><p>我们用<strong>dp[i]来表示把前i个人分组能得到的最大积极度</strong></p>
+<h2 id="那么，开始解析代码"><a href="#那么，开始解析代码" class="headerlink" title="那么，开始解析代码"></a>那么，开始解析代码</h2><p>先用一层循环遍历n个人，再在里面套一个循环从1~n，表示把i个人中的j个人分到一组</p>
+<p>在第二层循环开始前让dp[i]等于dp[i-1]</p>
+<p>如果那i个人能分到一组，转移方程式就是<strong>在dp[i]和dp[i-j]+a[j]中取最大值</strong></p>
+<h1 id="Code"><a href="#Code" class="headerlink" title="$Code:$"></a>$Code:$</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> n;<br><span class="hljs-type">int</span> a[<span class="hljs-number">1005</span>];<br><span class="hljs-type">int</span> dp[<span class="hljs-number">10005</span>];<br>    <span class="hljs-comment">//dp[i]表示前i个人能得到的最大积极度</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++)<br>        cin &gt;&gt; a[i];<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++)&#123;<br>        dp[i] = dp[i<span class="hljs-number">-1</span>];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>;j &lt;= n;j++)&#123;<br>            <span class="hljs-keyword">if</span>(i &gt;= j)<br>                dp[i] = <span class="hljs-built_in">max</span>(dp[i],dp[i-j] + a[j]);<br>            <span class="hljs-comment">//状态转移方程</span><br>        &#125;<br>    &#125;<br>    cout &lt;&lt; dp[n];<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h3 id="4-数学公式"><a href="#4-数学公式" class="headerlink" title="4.数学公式"></a>4.数学公式</h3><p>*** 目前Hexo无法渲染QwQ ***</p>
-<h3 id="5-标题"><a href="#5-标题" class="headerlink" title="5.标题"></a>5.标题</h3><p>‘#’ 一级标题<br>‘##’ 二级标题<br>‘###’ 三级标题<br>‘####’ 四级标题<br>‘#####’ 五级标题<br>‘######’ 六级标题</p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6>
+<p><strong>点个赞再走吧！</strong></p>
+
                 
               </div>
             
@@ -306,13 +302,20 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%AE%80%E4%BB%8B-%E4%BB%8B%E7%BB%8D/" class="category-chain-item">简介/介绍</a>
+  <a href="/categories/%E9%A2%98%E8%A7%A3/" class="category-chain-item">题解</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E7%AE%80%E4%BB%8B-%E4%BB%8B%E7%BB%8D/Markdown/" class="category-chain-item">Markdown</a>
+  <a href="/categories/%E9%A2%98%E8%A7%A3/%E6%B4%9B%E8%B0%B7/" class="category-chain-item">洛谷</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E9%A2%98%E8%A7%A3/%E6%B4%9B%E8%B0%B7/%E6%99%AE%E5%8F%8A/" class="category-chain-item">普及-</a>
+  
+  
+
   
 
   
@@ -328,7 +331,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%B5%8B%E8%AF%95/" class="print-no-link">#测试</a>
+        <a href="/tags/%E6%B4%9B%E8%B0%B7/" class="print-no-link">#洛谷</a>
+      
+        <a href="/tags/%E6%99%AE%E5%8F%8A/" class="print-no-link">#普及-</a>
       
     </div>
   
@@ -340,8 +345,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Markdown测试</div>
-      <div>http://yuantianyou0128.github.io/2025/10/26/markdown测试/</div>
+      <div>P13015 [GESP202506 六级] 学习小组 题解</div>
+      <div>http://yuantianyou0128.github.io/2025/10/26/P13015-GESP202506-六级-学习小组-题解/</div>
     </div>
     <div class="license-meta">
       
@@ -385,9 +390,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/10/26/P13015-GESP202506-%E5%85%AD%E7%BA%A7-%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%84-%E9%A2%98%E8%A7%A3/" title="P13015 [GESP202506 六级] 学习小组 题解">
+                      <a href="/2025/10/26/P7079-%E5%88%86%E7%B3%96%E6%9E%9C-%E9%A2%98%E8%A7%A3/" title="P7079 分糖果 题解">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">P13015 [GESP202506 六级] 学习小组 题解</span>
+                        <span class="hidden-mobile">P7079 分糖果 题解</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -395,8 +400,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/10/25/P9749-CSP-J-2023-%E5%85%AC%E8%B7%AF-%E9%A2%98%E8%A7%A3/" title="P9749 [CSP-J 2023] 公路_题解">
-                        <span class="hidden-mobile">P9749 [CSP-J 2023] 公路_题解</span>
+                      <a href="/2025/10/26/markdown%E6%B5%8B%E8%AF%95/" title="Markdown测试">
+                        <span class="hidden-mobile">Markdown测试</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

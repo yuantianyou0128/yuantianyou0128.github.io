@@ -4,6 +4,68 @@
   
   
   <entry>
+    <title>P7079 分糖果 题解</title>
+    <link href="/2025/10/26/P7079-%E5%88%86%E7%B3%96%E6%9E%9C-%E9%A2%98%E8%A7%A3/"/>
+    <url>/2025/10/26/P7079-%E5%88%86%E7%B3%96%E6%9E%9C-%E9%A2%98%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<h1 id="P7909-CSP-J-2021-分糖果"><a href="#P7909-CSP-J-2021-分糖果" class="headerlink" title="P7909 [CSP-J 2021] 分糖果"></a>P7909 [CSP-J 2021] 分糖果</h1><h2 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h2><p>红太阳幼儿园的小朋友们开始分糖果啦！</p><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>红太阳幼儿园有 $n$ 个小朋友，你是其中之一。保证 $n \ge 2$。</p><p>有一天你在幼儿园的后花园里发现无穷多颗糖果，你打算拿一些糖果回去分给幼儿园的小朋友们。</p><p>由于你只是个平平无奇的幼儿园小朋友，所以你的体力有限，至多只能拿 $R$ 块糖回去。</p><p>但是拿的太少不够分的，所以你至少要拿 $L$ 块糖回去。保证 $n \le L \le R$。</p><p>也就是说，如果你拿了 $k$ 块糖，那么你需要保证 $L \le k \le R$。</p><p>如果你拿了 $k$ 块糖，你将把这 $k$ 块糖放到篮子里，并要求大家按照如下方案分糖果：只要篮子里有<strong>不少于</strong> $n$ 块糖果，幼儿园的所有 $n$ 个小朋友（包括你自己）都从篮子中拿走<strong>恰好</strong>一块糖，直到篮子里的糖数量<strong>少于</strong> $n$ 块。此时篮子里剩余的糖果均归你所有——这些糖果是<strong>作为你搬糖果的奖励</strong>。</p><p>作为幼儿园高质量小朋友，你希望让<strong>作为你搬糖果的奖励</strong>的糖果数量（<strong>而不是你最后获得的总糖果数量</strong>！）尽可能多；因此你需要写一个程序，依次输入 $n, L, R$，并输出你最多能获得多少<strong>作为你搬糖果的奖励</strong>的糖果数量。</p><h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入一行，包含三个正整数 $n, L, R$，分别表示小朋友的个数、糖果数量的下界和上界。</p><h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出一行一个整数，表示你最多能获得的<strong>作为你搬糖果的奖励</strong>的糖果数量。</p><h2 id="输入输出样例-1"><a href="#输入输出样例-1" class="headerlink" title="输入输出样例 #1"></a>输入输出样例 #1</h2><h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入 #1"></a>输入 #1</h3><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">7 </span><span class="hljs-number">16</span> <span class="hljs-number">23</span><br></code></pre></td></tr></table></figure><h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出 #1"></a>输出 #1</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">6<br></code></pre></td></tr></table></figure><h2 id="输入输出样例-2"><a href="#输入输出样例-2" class="headerlink" title="输入输出样例 #2"></a>输入输出样例 #2</h2><h3 id="输入-2"><a href="#输入-2" class="headerlink" title="输入 #2"></a>输入 #2</h3><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">10 </span><span class="hljs-number">14</span> <span class="hljs-number">18</span><br></code></pre></td></tr></table></figure><h3 id="输出-2"><a href="#输出-2" class="headerlink" title="输出 #2"></a>输出 #2</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">8<br></code></pre></td></tr></table></figure><p>对于所有数据，保证 $2 \le n \le L \le R \le {10}^9$。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code:"></a>Code:</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> n, l, r;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    cin &gt;&gt; n &gt;&gt; l &gt;&gt; r;<br>    <span class="hljs-keyword">if</span> (l / n == r / n)<br>    &#123;<br>        cout &lt;&lt; r % n;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = l / n; i &lt;= r / n; i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span> (i * n + (n - <span class="hljs-number">1</span>) &gt;= l &amp;&amp; i * n + (n - <span class="hljs-number">1</span>) &lt;= r)<br>        &#123;<br>            cout &lt;&lt; (n - <span class="hljs-number">1</span>);<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>题解</category>
+      
+      <category>洛谷</category>
+      
+      <category>入门</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>洛谷</tag>
+      
+      <tag>入门</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>P13015 [GESP202506 六级] 学习小组 题解</title>
+    <link href="/2025/10/26/P13015-GESP202506-%E5%85%AD%E7%BA%A7-%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%84-%E9%A2%98%E8%A7%A3/"/>
+    <url>/2025/10/26/P13015-GESP202506-%E5%85%AD%E7%BA%A7-%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%84-%E9%A2%98%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<h1 id="P13015-GESP202506-六级-学习小组-题解"><a href="#P13015-GESP202506-六级-学习小组-题解" class="headerlink" title="P13015 [GESP202506 六级] 学习小组 题解"></a>P13015 [GESP202506 六级] 学习小组 题解</h1><h3 id="（作为一名刚初一的蒟蒻，也不能忘记水题做题的使命-）"><a href="#（作为一名刚初一的蒟蒻，也不能忘记水题做题的使命-）" class="headerlink" title="（作为一名刚初一的蒟蒻，也不能忘记水题做题的使命!）"></a>（作为一名刚初一的蒟蒻，也不能忘记<del>水题</del>做题的使命!）</h3><p>我们用<strong>dp[i]来表示把前i个人分组能得到的最大积极度</strong></p><h2 id="那么，开始解析代码"><a href="#那么，开始解析代码" class="headerlink" title="那么，开始解析代码"></a>那么，开始解析代码</h2><p>先用一层循环遍历n个人，再在里面套一个循环从1~n，表示把i个人中的j个人分到一组</p><p>在第二层循环开始前让dp[i]等于dp[i-1]</p><p>如果那i个人能分到一组，转移方程式就是<strong>在dp[i]和dp[i-j]+a[j]中取最大值</strong></p><h1 id="Code"><a href="#Code" class="headerlink" title="$Code:$"></a>$Code:$</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> n;<br><span class="hljs-type">int</span> a[<span class="hljs-number">1005</span>];<br><span class="hljs-type">int</span> dp[<span class="hljs-number">10005</span>];<br>    <span class="hljs-comment">//dp[i]表示前i个人能得到的最大积极度</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++)<br>        cin &gt;&gt; a[i];<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++)&#123;<br>        dp[i] = dp[i<span class="hljs-number">-1</span>];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>;j &lt;= n;j++)&#123;<br>            <span class="hljs-keyword">if</span>(i &gt;= j)<br>                dp[i] = <span class="hljs-built_in">max</span>(dp[i],dp[i-j] + a[j]);<br>            <span class="hljs-comment">//状态转移方程</span><br>        &#125;<br>    &#125;<br>    cout &lt;&lt; dp[n];<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p><strong>点个赞再走吧！</strong></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>题解</category>
+      
+      <category>洛谷</category>
+      
+      <category>普及-</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>洛谷</tag>
+      
+      <tag>普及-</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Markdown测试</title>
     <link href="/2025/10/26/markdown%E6%B5%8B%E8%AF%95/"/>
     <url>/2025/10/26/markdown%E6%B5%8B%E8%AF%95/</url>
