@@ -19,22 +19,21 @@
   <meta name="author" content="yuantianyou0128">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言我为了这次CSP,整个暑假都在准备,每天都请假不上晚自习,但还是因为我太蒟了,考场挂了许多分 T1T1考场写了十多分钟,不知道是什么原因最后一个大数据运行很慢,所以我换成了getchar()并合并了一些步骤,结果回家来洛谷一提交全部RE(悲)Code： 12345678910111213141516171819202122232425#include&lt;iostream&gt;#inclu">
+    <meta name="description" content="动态规划DP两个特征:1.最优子结构 2.无后效性 背包DP01背包有n个物品,每个物品价值w_i元,体积v_i元,现在有一个总容量为V的背包,每个物品只有一个,求能装下物品的最大值 状态dp[i][j] 表示从前i个物品中选出体积为j的背包的最大价值 递推式不选:那就是在前i-1件里选 选:第i个物品的价值为w[i],体积为v[i],则如果选那就是在前i-1个里体积为j-v[i]的最大价值加上w">
 <meta property="og:type" content="article">
-<meta property="og:title" content="完了J组崩了www">
-<meta property="og:url" content="http://yuantianyou0128.github.io/2025/11/01/%E5%AE%8C%E4%BA%86J%E7%BB%84%E5%B4%A9%E4%BA%86www/index.html">
+<meta property="og:title" content="DP汇总">
+<meta property="og:url" content="http://yuantianyou0128.github.io/2025/11/09/DP%E6%B1%87%E6%80%BB/index.html">
 <meta property="og:site_name" content="Yuantianyou&#39;Hexo">
-<meta property="og:description" content="前言我为了这次CSP,整个暑假都在准备,每天都请假不上晚自习,但还是因为我太蒟了,考场挂了许多分 T1T1考场写了十多分钟,不知道是什么原因最后一个大数据运行很慢,所以我换成了getchar()并合并了一些步骤,结果回家来洛谷一提交全部RE(悲)Code： 12345678910111213141516171819202122232425#include&lt;iostream&gt;#inclu">
+<meta property="og:description" content="动态规划DP两个特征:1.最优子结构 2.无后效性 背包DP01背包有n个物品,每个物品价值w_i元,体积v_i元,现在有一个总容量为V的背包,每个物品只有一个,求能装下物品的最大值 状态dp[i][j] 表示从前i个物品中选出体积为j的背包的最大价值 递推式不选:那就是在前i-1件里选 选:第i个物品的价值为w[i],体积为v[i],则如果选那就是在前i-1个里体积为j-v[i]的最大价值加上w">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-11-01T08:28:00.000Z">
-<meta property="article:modified_time" content="2025-11-09T06:50:37.262Z">
+<meta property="article:published_time" content="2025-11-09T08:19:10.000Z">
+<meta property="article:modified_time" content="2025-11-09T08:46:10.980Z">
 <meta property="article:author" content="yuantianyou0128">
-<meta property="article:tag" content="纪念">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>完了J组崩了www - Yuantianyou&#39;Hexo</title>
+  <title>DP汇总 - Yuantianyou&#39;Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="完了J组崩了www"></span>
+            <span id="subtitle" data-typed-text="DP汇总"></span>
           
         </div>
 
@@ -211,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-11-01 16:28" pubdate>
-          2025年11月1日 下午
+        <time datetime="2025-11-09 16:19" pubdate>
+          2025年11月9日 下午
         </time>
       </span>
     
@@ -223,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          336 字
+          571 字
         
       </span>
     
@@ -234,7 +233,7 @@
         
         
         
-          3 分钟
+          5 分钟
         
       </span>
     
@@ -271,26 +270,26 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">完了J组崩了www</h1>
+            <h1 id="seo-header">DP汇总</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我为了这次CSP,整个暑假都在准备,每天都请假不上晚自习,但还是因为我太蒟了,考场挂了许多分</p>
-<h2 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h2><p>T1考场写了十多分钟,不知道是什么原因最后一个大数据运行很慢,所以我换成了getchar()并合并了一些步骤,结果回家来洛谷一提交全部RE(悲)<br>Code：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">char</span> a[<span class="hljs-number">1000005</span>];<br><span class="hljs-type">int</span> s[<span class="hljs-number">20</span>];<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-type">char</span> ch;<br>	<span class="hljs-type">int</span> g = <span class="hljs-number">0</span>;<br>	ch = <span class="hljs-built_in">getchar</span>();<br>	<span class="hljs-keyword">while</span>(ch != <span class="hljs-string">&#x27;\n&#x27;</span>)&#123;<br>		a[g] = ch;<br>		<span class="hljs-keyword">if</span>(a[g] &gt;= <span class="hljs-string">&#x27;0&#x27;</span> &amp;&amp; a[g] &lt;= <span class="hljs-string">&#x27;9&#x27;</span>)&#123;<br>			s[a[g] - <span class="hljs-string">&#x27;0&#x27;</span>]++;<br>		&#125;<br>		g++;<br>		ch = <span class="hljs-built_in">getchar</span>();<br>	&#125;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">9</span>;j &gt;= <span class="hljs-number">0</span>;j--)&#123;<br>		<span class="hljs-keyword">while</span>(s[j])&#123;<br>			<span class="hljs-built_in">putchar</span>(j + <span class="hljs-string">&#x27;0&#x27;</span>);<br>			s[j]--;<br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125; <br></code></pre></td></tr></table></figure>
-<h2 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h2><p>T2考场大约编了30分钟,大样例都过了,可能是给的太水了吧,回家来第二天看民间数据T2只得了25分QwQ(悲)</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">代码忘了...<br></code></pre></td></tr></table></figure>
+                <h2 id="动态规划DP"><a href="#动态规划DP" class="headerlink" title="动态规划DP"></a>动态规划DP</h2><h3 id="两个特征"><a href="#两个特征" class="headerlink" title="两个特征:"></a>两个特征:</h3><p>1.最优子结构</p>
+<p>2.无后效性</p>
+<h2 id="背包DP"><a href="#背包DP" class="headerlink" title="背包DP"></a>背包DP</h2><h3 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h3><p>有n个物品,每个物品价值w_i元,体积v_i元,现在有一个总容量为V的背包,每个物品<strong>只有一个</strong>,求能装下物品的最大值</p>
+<h4 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h4><p>dp[i][j] 表示从前i个物品中选出体积为j的背包的最大价值</p>
+<h4 id="递推式"><a href="#递推式" class="headerlink" title="递推式"></a>递推式</h4><p>不选:那就是在前i-1件里选</p>
+<p>选:第i个物品的价值为w[i],体积为v[i],则如果选那就是在前i-1个里体积为j-v[i]的最大价值加上w[i];</p>
+<p>dp[i][j] &#x3D; max(dp[i-1][j],dp[i-1][j-v[i]] + w[i]);</p>
+<h4 id="Code"><a href="#Code" class="headerlink" title="Code:"></a>Code:</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> t,n,V;<br><span class="hljs-type">int</span> v[<span class="hljs-number">1005</span>];<br><span class="hljs-type">int</span> w[<span class="hljs-number">1005</span>];<br><span class="hljs-type">int</span> f[<span class="hljs-number">1005</span>][<span class="hljs-number">1005</span>];<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	cin &gt;&gt; t;<br>	<span class="hljs-keyword">while</span>(t--)&#123;<br>		cin &gt;&gt; n &gt;&gt; V;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++) cin &gt;&gt; w[i];<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++) cin &gt;&gt; v[i];<br>		<span class="hljs-comment">//f[0][0] = 0;</span><br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++)&#123;<br>			f[<span class="hljs-number">0</span>][i] = f[i][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>		&#125;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++)&#123;<br>			<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>;j &lt;= V;j++)&#123;<br>				<span class="hljs-keyword">if</span>(j - v[i] &gt;= <span class="hljs-number">0</span>) f[i][j] = <span class="hljs-built_in">max</span>(f[i - <span class="hljs-number">1</span>][j],f[i - <span class="hljs-number">1</span>][j - v[i]] + w[i]);<br>				<span class="hljs-keyword">else</span> f[i][j] = f[i - <span class="hljs-number">1</span>][j];<br>			&#125;<br>		&#125;<br>		cout &lt;&lt; f[n][V] &lt;&lt; endl;<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h2><p>T3在考场上看出是动态规划,但我还是太蒟了,方程都没推出来,唉~~<br>回家一看民间数据爆零了(衰)</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">代码太蒟了就不展示了<br></code></pre></td></tr></table></figure>
-
-<h2 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h2><p>一眼动态规划,还是背包,<del>结果没编出来</del></p>
-<p>最后打了个暴力,民间数据显示20分(伤)</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">暴力DFS呜呜呜<br></code></pre></td></tr></table></figure>
-
-<h3 id="最后一言"><a href="#最后一言" class="headerlink" title="最后一言"></a>最后一言</h3><p>也许就到这了吧…</p>
-<h2 id="我将何去何从-我问我自己…"><a href="#我将何去何从-我问我自己…" class="headerlink" title="我将何去何从,我问我自己…"></a>我将何去何从,我问我自己…</h2>
+<h3 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h3><p>有n个物品,每个物品价值w_i元,体积v_i元,现在有一个总容量为V的背包,每个物品只有<strong>无数</strong>个,求能装下物品的最大值</p>
+<h4 id="状态-1"><a href="#状态-1" class="headerlink" title="状态"></a>状态</h4><p>dp[i][j] 表示从前i个物品中选出体积为j的背包的最大价值</p>
+<h4 id="递推式-1"><a href="#递推式-1" class="headerlink" title="递推式"></a>递推式</h4><p>不选:那就是在前i-1件里选</p>
+<p>选:第i个物品的价值为w[i],体积为v[i],则如果选,因为一个物品有无数个那就是在前i个里体积为j-v[i]的最大价值加上w[i];</p>
+<p>dp[i][j] &#x3D; max(dp[i-1][j],dp[i][j-v[i]] + w[i]);</p>
+<h4 id="Code-1"><a href="#Code-1" class="headerlink" title="Code:"></a>Code:</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> t,n;<br><span class="hljs-type">int</span> v[<span class="hljs-number">10005</span>],w[<span class="hljs-number">10005</span>];<br><span class="hljs-type">int</span> f[<span class="hljs-number">10005</span>][<span class="hljs-number">10005</span>];<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	cin &gt;&gt; t &gt;&gt; n;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++) cin &gt;&gt; v[i] &gt;&gt; w[i];<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++)&#123;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>;j &lt;= t;j++)&#123;<br>			<span class="hljs-keyword">if</span>(j &gt;= v[i]) f[i][j] = <span class="hljs-built_in">max</span>(f[i<span class="hljs-number">-1</span>][j],f[i][j - v[i]] + w[i]);<br>			<span class="hljs-keyword">else</span> f[i][j] = f[i<span class="hljs-number">-1</span>][j];<br>		&#125;<br>	&#125;<br>	cout &lt;&lt; f[n][t];<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -308,15 +307,8 @@
     
       <span class="category-chain">
         
-  <a href="/categories/2025CSP-J/" class="category-chain-item">2025CSP-J</a>
+  <a href="/categories/%E8%AE%B0%E5%BD%95-%E7%9F%A5%E8%AF%86/" class="category-chain-item">记录/知识</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/2025CSP-J/%E7%BC%85%E6%80%80/" class="category-chain-item">缅怀</a>
-  
-  
-
   
 
       </span>
@@ -327,13 +319,6 @@
     </div>
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E7%BA%AA%E5%BF%B5/" class="print-no-link">#纪念</a>
-      
-    </div>
-  
 </div>
 
 
@@ -342,8 +327,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>完了J组崩了www</div>
-      <div>http://yuantianyou0128.github.io/2025/11/01/完了J组崩了www/</div>
+      <div>DP汇总</div>
+      <div>http://yuantianyou0128.github.io/2025/11/09/DP汇总/</div>
     </div>
     <div class="license-meta">
       
@@ -355,7 +340,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年11月1日</div>
+          <div>2025年11月9日</div>
         </div>
       
       
@@ -387,18 +372,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/11/09/DP%E6%B1%87%E6%80%BB/" title="DP汇总">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">DP汇总</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/10/30/CSP-J%E7%AC%AC%E4%BA%8C%E8%BD%AE%E5%80%92%E8%AE%A1%E6%97%B6%E4%B8%80%E5%A4%A9/" title="CSP-J第二轮倒计时一天!">
-                        <span class="hidden-mobile">CSP-J第二轮倒计时一天!</span>
+                      <a href="/2025/11/01/%E5%AE%8C%E4%BA%86J%E7%BB%84%E5%B4%A9%E4%BA%86www/" title="完了J组崩了www">
+                        <span class="hidden-mobile">完了J组崩了www</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
