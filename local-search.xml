@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>完了J组崩了www</title>
+    <link href="/2025/11/01/%E5%AE%8C%E4%BA%86J%E7%BB%84%E5%B4%A9%E4%BA%86www/"/>
+    <url>/2025/11/01/%E5%AE%8C%E4%BA%86J%E7%BB%84%E5%B4%A9%E4%BA%86www/</url>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我为了这次CSP,整个暑假都在准备,每天都请假不上晚自习,但还是因为我太蒟了,考场挂了许多分</p><h2 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h2><p>T1考场写了十多分钟,不知道是什么原因最后一个大数据运行很慢,所以我换成了getchar()并合并了一些步骤,结果回家来洛谷一提交全部RE(悲)<br>Code：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">char</span> a[<span class="hljs-number">1000005</span>];<br><span class="hljs-type">int</span> s[<span class="hljs-number">20</span>];<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br><span class="hljs-type">char</span> ch;<br><span class="hljs-type">int</span> g = <span class="hljs-number">0</span>;<br>ch = <span class="hljs-built_in">getchar</span>();<br><span class="hljs-keyword">while</span>(ch != <span class="hljs-string">&#x27;\n&#x27;</span>)&#123;<br>a[g] = ch;<br><span class="hljs-keyword">if</span>(a[g] &gt;= <span class="hljs-string">&#x27;0&#x27;</span> &amp;&amp; a[g] &lt;= <span class="hljs-string">&#x27;9&#x27;</span>)&#123;<br>s[a[g] - <span class="hljs-string">&#x27;0&#x27;</span>]++;<br>&#125;<br>g++;<br>ch = <span class="hljs-built_in">getchar</span>();<br>&#125;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">9</span>;j &gt;= <span class="hljs-number">0</span>;j--)&#123;<br><span class="hljs-keyword">while</span>(s[j])&#123;<br><span class="hljs-built_in">putchar</span>(j + <span class="hljs-string">&#x27;0&#x27;</span>);<br>s[j]--;<br>&#125;<br>&#125;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125; <br></code></pre></td></tr></table></figure><h2 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h2><p>T2考场大约编了30分钟,大样例都过了,可能是给的太水了吧,回家来第二天看民间数据T2只得了25分QwQ(悲)</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">代码忘了...<br></code></pre></td></tr></table></figure><h2 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h2><p>T3在考场上看出是动态规划,但我还是太蒟了,方程都没推出来,唉~~<br>回家一看民间数据爆零了(衰)</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">代码太蒟了就不展示了<br></code></pre></td></tr></table></figure><h2 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h2><p>一眼动态规划,还是背包,<del>结果没编出来</del></p><p>最后打了个暴力,民间数据显示20分(伤)</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">暴力DFS呜呜呜<br></code></pre></td></tr></table></figure><h3 id="最后一言"><a href="#最后一言" class="headerlink" title="最后一言"></a>最后一言</h3><p>也许就到这了吧…</p><h2 id="我将何去何从-我问我自己…"><a href="#我将何去何从-我问我自己…" class="headerlink" title="我将何去何从,我问我自己…"></a>我将何去何从,我问我自己…</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>2025CSP-J</category>
+      
+      <category>缅怀</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>纪念</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>CSP-J第二轮倒计时一天!</title>
     <link href="/2025/10/30/CSP-J%E7%AC%AC%E4%BA%8C%E8%BD%AE%E5%80%92%E8%AE%A1%E6%97%B6%E4%B8%80%E5%A4%A9/"/>
     <url>/2025/10/30/CSP-J%E7%AC%AC%E4%BA%8C%E8%BD%AE%E5%80%92%E8%AE%A1%E6%97%B6%E4%B8%80%E5%A4%A9/</url>
@@ -35,7 +62,7 @@
     <link href="/2025/10/28/%E6%A0%87%E7%AD%BE-%E5%88%86%E7%B1%BB%E7%BB%86%E5%88%99/"/>
     <url>/2025/10/28/%E6%A0%87%E7%AD%BE-%E5%88%86%E7%B1%BB%E7%BB%86%E5%88%99/</url>
     
-    <content type="html"><![CDATA[<h2 id="这篇文章就是为了归纳已经用过的标签和分类"><a href="#这篇文章就是为了归纳已经用过的标签和分类" class="headerlink" title="这篇文章就是为了归纳已经用过的标签和分类"></a>这篇文章就是为了归纳已经用过的标签和分类</h2><h3 id="1-分类"><a href="#1-分类" class="headerlink" title="1.分类"></a>1.分类</h3><h4 id="1-题解"><a href="#1-题解" class="headerlink" title="(1)题解"></a>(1)题解</h4><p>题解类分为<strong>洛谷</strong>和其他没分类的</p><p><strong>洛谷</strong>里包含的是<strong>题目难度</strong>的分类</p><h4 id="2-简介-介绍"><a href="#2-简介-介绍" class="headerlink" title="(2)简介&#x2F;介绍"></a>(2)简介&#x2F;介绍</h4><p>分为<strong>入门</strong>和<strong>Markdown测试</strong>两部分</p><h3 id="2-标签"><a href="#2-标签" class="headerlink" title="2.标签"></a>2.标签</h3><p>目前就有:<br>1.入门<br>2.普及-<br>3.洛谷<br>4.测试<br>5.网站介绍<br>这几个标签！！</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="这篇文章就是为了归纳已经用过的标签和分类"><a href="#这篇文章就是为了归纳已经用过的标签和分类" class="headerlink" title="这篇文章就是为了归纳已经用过的标签和分类"></a>这篇文章就是为了归纳已经用过的标签和分类</h2><h3 id="1-分类"><a href="#1-分类" class="headerlink" title="1.分类"></a>1.分类</h3><h4 id="1-题解"><a href="#1-题解" class="headerlink" title="(1)题解"></a>(1)题解</h4><p>题解类分为<strong>洛谷</strong>和其他没分类的</p><p><strong>洛谷</strong>里包含的是<strong>题目难度</strong>的分类</p><h4 id="2-简介-介绍"><a href="#2-简介-介绍" class="headerlink" title="(2)简介&#x2F;介绍"></a>(2)简介&#x2F;介绍</h4><p>分为<strong>入门</strong>和<strong>Markdown测试</strong>两部分</p><h4 id="3-2025CSP-J"><a href="#3-2025CSP-J" class="headerlink" title="(3)2025CSP-J"></a>(3)2025CSP-J</h4><p>用来<strong>纪念</strong>和<strong>缅怀</strong>2025CSP-J我的低分QwQ</p><h3 id="2-标签"><a href="#2-标签" class="headerlink" title="2.标签"></a>2.标签</h3><p>目前就有:<br>1.入门<br>2.普及-<br>3.洛谷<br>4.测试<br>5.网站介绍<br>6.纪念<br>这几个标签！！</p>]]></content>
     
     
     <categories>
